@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ - USD</title>
+    <style>
+        body {
+            font: normal 12pt Arial;
+
+        }
+
+        button {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Convertendo R$ -> US$</h1>
+    <button id="converter">Converter</button>
+    <p>Clique aqui acima para iniciar</p>
+    <div id="resultado"></div>
+    
+
+    
+    <script>
+        document.getElementById('converter').addEventListener ('click', function() {
+
+             const dolar = prompt(`Antes de mais nada. Quanto está a cotação do dólar agora?`)
+             const carteira = parseFloat(prompt(`Quantos R$ você tem na carteira?`))
+             const convertendo = (carteira / dolar).toFixed(2)
+             
+
+            document.getElementById(`resultado`).innerHTML = 
+                `Você poderá comprar US$${convertendo} dólares com R$${carteira} que tem na sua carteira.`
+            
+
+        })
+    </script>
+</body>
+</html>

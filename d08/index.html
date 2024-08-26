@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desconto 10%</title>
+    <style>
+        body {
+            font: normal 12pt Arial;
+
+        }
+
+        button {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular desconto</h1>
+    <button id="calcularBtn">Desconto de 10%</button>
+    <p>Clique aqui acima para iniciar</p>
+    <div id="resultado"></div>
+    
+
+    
+    <script>
+        document.getElementById('calcularBtn').addEventListener ('click', function() {
+
+             const produto = prompt(`Qual é o produto que você está comprando?`)
+             const preço = parseFloat(prompt(`Qual é o preço de ${produto}?`))
+             const desconto = (preço * 0.10).toFixed(2)
+             const preçoFinal = (preço - desconto).toFixed(2)
+
+            document.getElementById(`resultado`).innerHTML = 
+                `Calculando desconto de 10% para ${produto}.<br>
+                O preço original era R$ ${preço.toFixed(2)}.<br>
+                Você acaba de ganhar R$ ${desconto} de desconto (-10%).<br>
+                No fim, você vai ganhar R$ ${preçoFinal} no produto ${produto}.`
+            
+
+        })
+    </script>
+</body>
+</html>
